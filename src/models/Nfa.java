@@ -1,6 +1,8 @@
 package models;
 import java.util.*;
 
+import NFA.Nfa;
+
 public class Nfa {
 
     private final ArrayList<Edge> edges;
@@ -154,7 +156,18 @@ public class Nfa {
     	edges.forEach((edge) -> destiny.add("q"+edge.Destiny()));
     	return destiny;
     }
-
+    
+    public ArrayList<Object> automata(String str) {
+    	Nfa c = Nfa.reToNfa(str);
+    	ArrayList<Object> lista = new ArrayList<>();
+    	lista.add( c.startState());
+    	lista.add( c.finalState());
+    	lista.add( c.State());
+    	lista.add( c.Transition());
+    	lista.add( c.Destiny());
+    	return lista;
+    }
+    
     public Nfa(String str) {
         Nfa c = Nfa.reToNfa(str);
         edges = c.getEdges();
