@@ -121,6 +121,22 @@ public class Nfa {
         edges.forEach((edge) -> edge.display());
     }
     
+    public String startState() {
+        return "q0";
+    }
+    
+    public String finalState() {
+        return "q" + stateCount;
+    }
+
+    public ArrayList<Object> allState() {
+    	ArrayList<Object> ss = new ArrayList<>();
+    	for(int i=0; i<=stateCount; i++) {
+    		ss.add("q"+i);
+    	}
+        return ss;
+    }
+    
     public ArrayList<Object> State() {
     	ArrayList<Object> states = new ArrayList<>();
     	edges.forEach((edge) -> states.add("q"+edge.State()));
