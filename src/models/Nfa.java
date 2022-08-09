@@ -131,7 +131,7 @@ public class Nfa {
         return "q" + stateCount;
     }
 
-    public ArrayList<Object> allState() {
+    public ArrayList<Object> allStates() {
     	ArrayList<Object> ss = new ArrayList<>();
     	for(int i=0; i<=stateCount; i++) {
     		ss.add("q"+i);
@@ -162,6 +162,7 @@ public class Nfa {
     	ArrayList<Object> lista = new ArrayList<>();
     	lista.add( c.startState());
     	lista.add( c.finalState());
+    	lista.add( c.allStates());
     	lista.add( c.State());
     	lista.add( c.Transition());
     	lista.add( c.Destiny());
