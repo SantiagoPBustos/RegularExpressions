@@ -29,4 +29,8 @@ public class ConstantsGUI {
     public static final String TITLE_DATE = "© 2020";
 
     public static final String TITLE_VALIDATE_RE = "Validate RE";
+    public static final String TITLE_VALIDATE_RE_LABEL = "Validate Regular Expression";
+    public static final String TITLE_INITIAL = "Inicial";
+    public static final String TITLE_TRANSITION = "Transicion";
+    public static final String TITLE_FINAL = "Final";
 }

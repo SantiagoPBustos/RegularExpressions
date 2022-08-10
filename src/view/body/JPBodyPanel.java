@@ -21,13 +21,13 @@ public class JPBodyPanel extends JPanel {
         jtpPrincipal = new JTabbedPane();
         jpEditRE = new JPEditRE(actionListener);
         jtpPrincipal.add(ConstantsGUI.TITLE_TAB_EDIT_RE,jpEditRE);
-        jtpPrincipal.add(ConstantsGUI.TITLE_TAB_SHOW_NFA,new JPShowNFA());
         jtpPrincipal.setFocusable(false);
-        jtpPrincipal.setEnabledAt(1,false);
+
         this.add(jtpPrincipal);
     }
 
     public String getRE() {
         return jpEditRE.getRE();
     }
+
 }

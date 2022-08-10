@@ -1,5 +1,6 @@
 package control;
 
+import models.Nfa;
 import models.ValidateRE;
 import view.ConstantsGUI;
 import view.JFMainWindow;
@@ -11,9 +12,11 @@ import java.awt.event.ActionListener;
 public class Controller implements ActionListener {
     private JFMainWindow jfMainWindow;
     private ValidateRE validateRE;
+    private Nfa controllerNFA;
 
     public Controller() {
         validateRE = new ValidateRE();
+        controllerNFA = new Nfa();
         jfMainWindow = new JFMainWindow(this);
         jfMainWindow.setVisible(true);
     }
@@ -25,14 +28,13 @@ public class Controller implements ActionListener {
                 case C_SHOW_ABOUT:
                     jfMainWindow.showAboutDialog();
                     break;
-                case C_OPEN:
-
-                    break;
                 case C_SAVE:
-
+                    jfMainWindow.openChooserFile();
                     break;
                 case C_CONVERT_TO_NFA:
-
+                    controllerNFA.automata(jfMainWindow.getRE());
+                    jfMainWindow.setElements(controllerNFA.State(),controllerNFA.Transition(),controllerNFA.Destiny());
+                    jfMainWindow.showNFA();
                     break;
                 case C_EXIT:
                     this.manageExitApp();
@@ -43,7 +45,7 @@ public class Controller implements ActionListener {
                     break;
             }
         }catch (Exception e2) {
-            System.out.println(e2);
+            JOptionPane.showMessageDialog(null,e2,e2.toString(),JOptionPane.ERROR_MESSAGE);
         }
     }
 

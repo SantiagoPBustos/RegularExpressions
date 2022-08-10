@@ -31,14 +31,11 @@ public class JPHeaderPanel extends JPanel {
         jmFile = new JMenu(ConstantsGUI.TITLE_MENU_FILE);
         jmFile.setBackground(Color.WHITE);
 
-        // Menu Item File/Open
-        jmiOpen = new JMenuItem(ConstantsGUI.TITLE_MENU_ITEM_OPEN);
-        jmiOpen.setBackground(Color.WHITE);
-        jmFile.add(jmiOpen);
-
         // Menu Item File/Save
         jmiSave = new JMenuItem(ConstantsGUI.TITLE_MENU_ITEM_SAVE);
         jmiSave.setBackground(Color.WHITE);
+        jmiSave.addActionListener(actionListener);
+        jmiSave.setActionCommand(Commands.C_SAVE.toString());
         jmFile.add(jmiSave);
 
         // Menu Item File/Exit
@@ -58,6 +55,8 @@ public class JPHeaderPanel extends JPanel {
 
         // Menu Item Convert/to NFA
         jmiConvert = new JMenuItem(ConstantsGUI.TITLE_MENU_ITEM_CONVERT);
+        jmiConvert.addActionListener(actionListener);
+        jmiConvert.setActionCommand(Commands.C_CONVERT_TO_NFA.toString());
         jmiConvert.setBackground(Color.WHITE);
 
         jmConvert.add(jmiConvert);

@@ -28,4 +28,5 @@ public class JPMainPanel extends JPanel {
     public String getRE() {
         return jpBodyPanel.getRE();
     }
+
 }
